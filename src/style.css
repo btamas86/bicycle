@@ -18,9 +18,11 @@
     --bike-size-spoke: calc(var(--bike-size) / 200);
     --bike-size-frame: calc(var(--bike-size) / 5);
     --bike-size-frame-width: calc(var(--bike-size) / 35);
+    --bike-size-pedal: calc(var(--bike-size) / 45);
     --bike-wheel-color: #212121;
     --bike-spoke-color: #828282;
     --bike-frame-color: #d05718;
+    --bike-pedal-color: #1f1f1f;
 }
 
 html, body {
@@ -141,5 +143,22 @@ body {
     top: calc(58% - var(--bike-size-frame));
     left: calc(48% - var(--bike-size-frame));
     transform: skew(-25deg);
+}
+
+
+/**
+ * Bicycle part:
+ * Pedal
+ */
+.pedal {
+    background-color: var(--bike-pedal-color);
+    width: var(--bike-size-pedal);
+    height: calc(var(--bike-size-pedal) * 5);
+
+    top: calc(72% - calc(var(--bike-size-pedal) * 5));
+    left: calc(50% - var(--bike-size-pedal));
+
+    transform: rotate(40deg);
+    animation: rotate 3s linear infinite both;
 }
 
