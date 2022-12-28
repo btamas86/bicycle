@@ -13,6 +13,11 @@
     --font-shadow: rgba(255, 255, 255, .075);
 
     --bike-size: 45vw;
+    --bike-size-wheel: calc(var(--bike-size) / 4);
+    --bike-size-tire: calc(var(--bike-size) / 45);
+    --bike-size-spoke: calc(var(--bike-size) / 200);
+    --bike-wheel-color: #212121;
+    --bike-spoke-color: #828282;
 }
 
 html, body {
@@ -48,5 +53,50 @@ body {
 
 #bicycle > * {
     position: absolute;
+}
+
+
+/**
+ * Bicycle part:
+ * Wheel
+ */
+.wheel {
+    top: calc(80% - var(--bike-size-wheel));
+    left: calc(35% - var(--bike-size-wheel));
+    width: var(--bike-size-wheel);
+    height: var(--bike-size-wheel);
+    border: var(--bike-size-tire) solid var(--bike-wheel-color);
+    border-radius: var(--bike-size-wheel);
+
+    animation: rotate 1.75s linear infinite both;
+}
+
+.wheel-rear {
+    right: calc(35% - var(--bike-size-wheel));
+    left: auto;
+}
+
+.wheel .spokes,
+.wheel .spokes:before,
+.wheel .spokes:after {
+    background-color: var(--bike-spoke-color);
+    position: absolute;
+    top: 0;
+    left: calc(50% - calc(var(--bike-size-spoke) / 2));
+    content: ' ';
+    width: var(--bike-size-spoke);
+    height: 100%;
+}
+
+.wheel .spokes:nth-child(2) {
+    transform: rotate(-90deg);
+}
+
+.wheel .spokes:before {
+    transform: rotate(-30deg);
+}
+
+.wheel .spokes:after {
+    transform: rotate(-60deg);
 }
 
