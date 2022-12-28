@@ -11,6 +11,8 @@
     --font-size: 1.5vw;
     --font-color: #101010;
     --font-shadow: rgba(255, 255, 255, .075);
+
+    --bike-size: 45vw;
 }
 
 html, body {
