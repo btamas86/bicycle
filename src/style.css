@@ -19,10 +19,12 @@
     --bike-size-frame: calc(var(--bike-size) / 5);
     --bike-size-frame-width: calc(var(--bike-size) / 35);
     --bike-size-pedal: calc(var(--bike-size) / 45);
+    --bike-size-handlebars: calc(var(--bike-size) / 45);
     --bike-wheel-color: #212121;
     --bike-spoke-color: #828282;
     --bike-frame-color: #d05718;
     --bike-pedal-color: #1f1f1f;
+    --bike-handlebars-color: #b40a0a;
 }
 
 html, body {
@@ -160,5 +162,32 @@ body {
 
     transform: rotate(40deg);
     animation: rotate 3s linear infinite both;
+}
+
+
+/**
+ * Bicycle part:
+ * Handlebars
+ */
+.handlebars {
+    background-color: var(--bike-handlebars-color);
+    width: var(--bike-size-handlebars);
+    height: calc(var(--bike-size-handlebars) * 5);
+
+    top: calc(31.5% - calc(var(--bike-size-handlebars) * 5));
+    left: calc(35% - var(--bike-size-handlebars));
+
+    transform: rotate(-90deg);
+}
+
+.handlebars:before {
+    background-color: var(--bike-handlebars-color);
+    position: absolute;
+    top: calc(var(--bike-size-handlebars) * 1.7 * -1);
+    left: calc(var(--bike-size-handlebars) * 0.8 * -1);
+    content: ' ';
+    width: var(--bike-size-handlebars);
+    height: calc(var(--bike-size-handlebars) * 2.5);
+    transform: rotate(-50deg);
 }
 
